@@ -1,0 +1,23 @@
+{% extends "AppKaren/padre.html" %}
+
+{% load static %}
+
+{% block contenido_que_cambia %}
+
+<center>{% block titulo %}
+<h1 class="mb-5">BUSQUEDA DE ACTIVIDADES</h1>
+{% endblock %}
+
+
+<h3>{{ mensaje }}</h3>
+
+<form action="{% url 'buscar' %}" method="GET"> 
+
+    <input type="text" name="ciudad" id="ciudad" placeholder="INSERTE CIUDAD">
+
+    <input type="submit" value="Buscar Actividad">
+
+
+</form></center>
+
+{% endblock %}

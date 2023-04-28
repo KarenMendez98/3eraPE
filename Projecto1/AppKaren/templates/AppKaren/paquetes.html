@@ -1,0 +1,62 @@
+from AppKaren.forms import PaqueteForm
+
+{% extends "AppKaren/padre.html" %}
+{% load static %}
+
+
+{% block contenido_que_cambia %}
+
+{% block titulo %}
+<center><h1>Encontrá el paquete ideal para vos!</h1>
+<img src="https://img.freepik.com/vector-premium/icono-equipaje-turismo-aventura-viajes-diseno-decorativo-viaje-maleta-equipaje-viajero-vector-moderno-dibujos-animados-plana_275421-255.jpg?w=2000" alt="" width="400" height="400"></center>
+
+<br>
+{% endblock %}
+
+<center><form action="" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Agregar">
+</form></center>
+
+<br>
+
+<center><h1> Lista de paquetes</h1></center>
+
+<center><table>
+    <thead>
+        </tr>
+        <th>ID</th>
+        <th>Lugar</th>
+        <th>Cant de Dias</th>
+        <th>Cant de Pasajeros</th>
+        <tr>
+    </thead>
+    <tbody>
+        
+        {% for paquete in paquetes %}
+        <tr>
+            <td>
+                {{paquete.id}}
+            </td>
+
+            <td>
+                {{paquete.lugar}}
+            </td>
+            <td>
+                {{paquete.cant_dias}}
+            </td>
+            <td>
+                {{paquete.cant_pasajeros}}
+            </td>
+           
+            {% endfor %}
+            
+            <br>
+        <tr>
+
+    </tbody>
+<table></center>
+
+
+{% endblock %}

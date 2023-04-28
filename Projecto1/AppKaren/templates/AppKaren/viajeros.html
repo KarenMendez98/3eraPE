@@ -1,0 +1,66 @@
+from AppKaren.forms import PasajeroForm
+
+{% extends "AppKaren/padre.html" %}
+{% load static %}
+
+{% block contenido_que_cambia %}
+
+{% block titulo %}
+    <center><h1>Nuestros Viajeros!</h1>
+<img src="https://img.freepik.com/vector-premium/viajero-turistico-pareja-mapa-equipaje-ilustracion-dibujos-animados-aislado_1207-1050.jpg" alt="" width="400" height="300" />></center>
+" alt=""></center>
+{% endblock %}
+
+
+<center><form action="" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Agregar">
+</form></center>
+
+<br>
+
+<center><h1> Lista de viajeros</h1><center>
+    <table>
+    
+    <thead>
+        </tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Destino</th>
+        <tr>
+    </thead>
+    <tbody>
+        
+        {% for viajero in viajeros %}
+        <tr>
+            <td>
+                {{viajero.id}}
+            </td>
+
+            <td>
+                {{viajero.nombre}}
+                </td>
+             <td>
+                {{viajero.apellido}}
+            </td>
+            <td>
+                {{viajero.email}}
+            </td>
+            <td>
+                {{viajero.destino}}
+            </td>
+
+        <td>
+            <a class="btn btn-danger" href="{% url 'eliminarViajero'  viajero.id  %}">Eliminar </a>
+            <a class="btn btn-success" href="{% url 'editarViajero'  viajero.id  %}">Editar</a>
+        </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+<table></center>
+
+    {% endblock %}

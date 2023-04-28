@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import *
 
-# Register your models here.
+admin.site.register(Viajero)
+admin.site.register(Visita)
+admin.site.register(Paquete)
+admin.site.register(Avatar)
+

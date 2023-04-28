@@ -1,0 +1,30 @@
+{% extends "AppKaren/padre.html" %}
+
+{% load static %}
+
+{% block contenido_que_cambia %}
+
+{% block titulo %}
+<center><h1 class="mb-5">Resultados de la busqueda de Actividades</h1></center>
+{% endblock %}
+
+{% if visitas %}
+
+
+<center><h2>LISTADO DE VISITAS</h2><br>
+{% for visita in visitas %}
+
+
+<h4>{{ visita.tipo }} - {{ visita.ciudad }}</h4>
+
+{% endfor %}
+
+{% else %}
+
+<center><h2>NO HAY ACTIVIDADES</h2></center>
+
+{% endif %}
+
+
+
+{% endblock %}

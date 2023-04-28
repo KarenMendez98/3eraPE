@@ -1,0 +1,20 @@
+{% extends "AppKaren/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">DATOS DEL PAQUETE</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+
+
+<p>LUGAR : <i>{{paquete.lugar}}</i></p>
+<p>CANT. DE DIAS : <i>{{paquete.cant_dias}}</i></p>
+<p>CANT. DE PASAJEROS : <i>{{paquete.cant_pasajeros}}</i></p>
+
+
+
+
+{% endblock %}

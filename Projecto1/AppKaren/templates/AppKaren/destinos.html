@@ -1,0 +1,131 @@
+from AppKaren.forms import VisitaForm
+
+{% extends "AppKaren/padre.html" %}
+
+{% load static %}
+    
+    {% block contenido_que_cambia %}
+    
+    <!-- Portfolio Section-->
+    
+    <center><h1>Conocé nuestras Visitas Guiadas!</h1></center>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div> <br>
+
+        <center><form action="" method="post">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Agregar">
+        </form></center>
+        
+        <br>
+
+        <center><table>
+            <thead>
+            </tr>
+                <th>ID</th>
+                <th>Tipo de Actividad</th>
+                <th>Ciudad</th>
+                <tr>
+            </thead>
+            <tbody>
+                
+                {% for visita in visitas %}
+                <tr>
+                                        <td>
+                        {{visita.id}}
+                    </td>
+                    
+                    <td>
+                        {{visita.tipo}}
+                    </td>
+                    <td>
+                        {{visita.ciudad}}
+                    </td>
+                                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        <table></center>
+        
+            <section class="page-section portfolio" id="portfolio">
+                <div class="container">
+                    <!-- Portfolio Section Heading-->
+                <br><br>
+        
+                        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Destinos</h2>
+                        <!-- Icon Divider-->
+                        <div class="divider-custom">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                            <div class="divider-custom-line"></div>
+                        </div> <br>
+                        <!-- Portfolio Grid Items-->
+                        <div class="row justify-content-center">
+                            <!-- Portfolio Item 1-->
+                            <div class="col-md-6 col-lg-4 mb-5">
+                                <div class="btn btn-primary">
+                                    <a class="btn btn-primary" href="{% url 'egipto' %}">EGIPTO</a>
+                                        <div class="portfolio-item-caption-content text-center text-white"></i></div>
+                                    </div>
+                                    <img src="https://static.vecteezy.com/system/resources/thumbnails/000/661/796/small_2x/Pyramid.jpg" alt="" width="200" height="200">
+                                </div>
+                            </div>
+                            <!-- Portfolio Item 2-->
+                            <div class="col-md-6 col-lg-4 mb-5">
+                                <div class="btn btn-primary">
+                                    <a class="btn btn-primary" href="{% url 'paris' %}">PARIS</a>
+                                        <div class="portfolio-item-caption-content text-center text-white"></i></div>
+                                    </div>
+                                    <img src="https://static.vecteezy.com/system/resources/previews/007/161/672/non_2x/paris-eiffel-tower-flat-illustration-cartoon-icon-vector.jpg" alt="" width="200" height="200">
+                                </div>
+                            </div>
+                            <!-- Portfolio Item 3-->
+                            <div class="col-md-6 col-lg-4 mb-5">
+                                <div class="btn btn-primary">
+                                    <a class="btn btn-primary" href="{% url 'puntaCana' %}">PUNTA CANA</a>
+                                        <div class="portfolio-item-caption-content text-center text-white"></i></div>
+                                    </div>
+                                    <img src="https://images.squarespace-cdn.com/content/v1/5f74f7d9ca13c44f72a5d57c/1608682346367-YJURPZKXFW3ZZHFBX5SR/WhatsApp+Image+2020-12-22+at+4.17.20+PM.jpeg?format=2500w" alt="" width="200" height="200">
+                                </div>
+                            </div>
+                            <!-- Portfolio Item 4-->
+                            <div class="col-md-6 col-lg-4 mb-5">
+                                <div class="btn btn-primary">
+                                    <a class="btn btn-primary" href="{% url 'miami' %}">MIAMI</a>
+                                        <div class="portfolio-item-caption-content text-center text-white"></i></div>
+                                    </div>
+                                    <img src="https://img.freepik.com/vector-gratis/etiqueta-viaje-disenada-miami_1284-38824.jpg?w=2000" alt="" width="200" height="200">
+                                </div>
+                            </div>
+                            <!-- Portfolio Item 5-->
+                            <div class="col-md-6 col-lg-4 mb-5">
+                                <div class="btn btn-primary">
+                                    <a class="btn btn-primary" href="{% url 'hongKong' %}">HONG KONG</a>
+                                        <div class="portfolio-item-caption-content text-center text-white"></i></div>
+                                    </div>
+                                    <img src="https://st2.depositphotos.com/1002806/10949/v/450/depositphotos_109499732-stock-illustration-hong-kong-beautiful-country-to.jpg" alt="" width="250" height="200">
+                                </div>
+                            </div>
+                            <!-- Portfolio Item 6-->
+                            <div class="col-md-6 col-lg-4 mb-5">
+                                <div class="btn btn-primary">
+                                    <a class="btn btn-primary" href="{% url 'newZeland' %}">NEW ZELAND</a>
+                                        <div class="portfolio-item-caption-content text-center text-white"></i></div>
+                                    </div>
+                                    <img src="https://img.freepik.com/vector-premium/ilustracion-recuerdo-viaje-insignia-logotipo-bandera-pegatina-nueva-zelanda_669574-69.jpg?w=2000" alt="" width="200" height="200">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div> <br>
+{% endblock %}

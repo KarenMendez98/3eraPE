@@ -1,0 +1,17 @@
+{% extends "AppKaren/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">FORMULARIO DE PAQUETES</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1>FORMULARIO DE PAQUETES!</h1>
+
+<form method="post">{% csrf_token %}
+    estas seguro que deseas borrar el paquete "{{ object }}"?
+    <input type="submit" value="SI">
+
+</form>
+{% endblock %}
